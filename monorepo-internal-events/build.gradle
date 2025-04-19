@@ -1,3 +1,11 @@
+plugins {
+    id("application")
+}
+
+application {
+    mainClass.set("br.com.ldf.medium.monorepo.internal_events.SubscriberStarter.java")
+}
+
 springBoot {
     buildInfo()
 }

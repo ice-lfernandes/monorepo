@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.4'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id("application")
 }
 
 group = 'br.com.ldf.medium'
@@ -13,6 +14,15 @@ configurations {
 	}
 }
 
+allprojects {
+	repositories {
+		mavenCentral()
+		maven {
+			url "https://packages.confluent.io/maven"
+		}
+	}
+}
+
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'org.springframework.boot'
@@ -21,13 +31,6 @@ subprojects {
 	java {
 		toolchain {
 			languageVersion = JavaLanguageVersion.of(21)
-		}
-	}
-
-	repositories {
-		mavenCentral()
-		maven {
-			url "https://packages.confluent.io/maven"
 		}
 	}
 
