@@ -1,6 +1,6 @@
-package br.com.ldf.medium.monorepo.internal_events.consumer;
+package br.com.ldf.medium.monorepo.subscriber.consumer;
 
-import br.com.ldf.medium.monorepo.internal_events.event.PaymentEvent;
+import br.com.ldf.medium.monorepo.subscriber.event.PaymentEvent;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

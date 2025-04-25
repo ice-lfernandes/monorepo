@@ -1,0 +1,5 @@
+spring:
+  quartz:
+    job-store-type: memory
+    auto-startup: true
+    scheduler-name: "SchedulerTaskExecutor"

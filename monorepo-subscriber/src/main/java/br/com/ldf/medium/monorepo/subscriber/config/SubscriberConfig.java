@@ -1,4 +1,4 @@
-package br.com.ldf.medium.monorepo.internal_events.config;
+package br.com.ldf.medium.monorepo.subscriber.config;
 
 import br.com.ldf.medium.monorepo.application.ApplicationConfig;
 import br.com.ldf.medium.monorepo.infrastructure.InfrastructureConfig;

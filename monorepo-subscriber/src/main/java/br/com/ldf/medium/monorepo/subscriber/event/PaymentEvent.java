@@ -1,4 +1,4 @@
-package br.com.ldf.medium.monorepo.internal_events.event;
+package br.com.ldf.medium.monorepo.subscriber.event;
 
 import br.com.ldf.medium.monorepo.domain.enums.PaymentStatus;
 

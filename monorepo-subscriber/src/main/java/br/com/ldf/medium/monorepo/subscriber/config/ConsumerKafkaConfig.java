@@ -1,4 +1,4 @@
-package br.com.ldf.medium.monorepo.internal_events.config;
+package br.com.ldf.medium.monorepo.subscriber.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;

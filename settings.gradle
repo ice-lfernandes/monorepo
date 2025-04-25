@@ -2,7 +2,7 @@ rootProject.name = 'monorepo'
 include 'monorepo-application'
 include 'monorepo-infrastructure'
 include 'monorepo-domain'
-include 'monorepo-internal-events'
+include 'monorepo-subscriber'
 include 'monorepo-api'
 include 'monorepo-jobs'
 
