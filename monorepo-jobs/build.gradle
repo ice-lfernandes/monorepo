@@ -1,7 +1,20 @@
+plugins {
+    id("application")
+}
+
+application {
+    mainClass.set("br.com.ldf.medium.monorepo.jobs.JobStarter.java")
+}
+
 springBoot {
     buildInfo()
 }
 
 dependencies {
+    // Other modules
+    implementation project(':monorepo-infrastructure')
+    implementation project(':monorepo-application')
+    implementation project(':monorepo-domain')
+
     implementation 'org.springframework.boot:spring-boot-starter-quartz'
 }

@@ -10,6 +10,8 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -24,5 +26,10 @@ public class PaymentProviderImpl implements PaymentProvider {
         var paymentEntity = mapper.toEntity(payment);
         paymentRepository.save(paymentEntity);
         log.info("Payment saved: {}", payment);
+    }
+
+    @Override
+    public List<Payment> findAllScheduledPayments() {
+        return mapper.toDomain(paymentRepository.findAllByPaymentScheduledForToday());
     }
 }

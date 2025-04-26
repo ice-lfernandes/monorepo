@@ -1,6 +1,8 @@
 package br.com.ldf.medium.monorepo.subscriber.consumer;
 
+import br.com.ldf.medium.monorepo.application.service.ScheduledPaymentService;
 import br.com.ldf.medium.monorepo.subscriber.event.PaymentEvent;
+import br.com.ldf.medium.monorepo.subscriber.mapper.SubscriberPaymentMapper;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -12,12 +14,17 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class SchedulePaymentConsumer {
+public class ScheduledPaymentConsumer {
+
+    SubscriberPaymentMapper mapper;
+    ScheduledPaymentService scheduledPaymentService;
 
     @KafkaListener(topics = "schedule-payment-topic", groupId = "consumer-group-monorepo",
             autoStartup = "true",
             containerFactory = "kafkaListenerContainerFactory")
     public void schedulePaymentListener(final PaymentEvent event) {
-        log.info("stage=schedule-payment-consumer, event={}", event);
+        log.info("stage=schedule-payment-consumer-init, event={}", event);
+        scheduledPaymentService.scheduledPayment(mapper.toDomain(event));
+        log.info("stage=schedule-payment-consumer-finished, event={}", event);
     }
 }

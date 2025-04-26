@@ -20,4 +20,11 @@ public class CreatePaymentService {
         log.info("Payment processed: {}", payment);
     }
 
+    public void processScheduledPayment() {
+        paymentProvider.findAllScheduledPayments()
+            .parallelStream()
+            .forEach(this::processPayment);
+        log.info("Scheduled payments processed");
+    }
+
 }

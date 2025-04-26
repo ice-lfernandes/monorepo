@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Table(name = "payment")
@@ -34,5 +35,5 @@ public class PaymentEntity {
     @Column(name = "creation_date", nullable = false)
     LocalDateTime creationDate;
     @Column(name = "scheduled_date", nullable = false)
-    LocalDateTime scheduledDate;
+    LocalDate scheduledDate;
 }
